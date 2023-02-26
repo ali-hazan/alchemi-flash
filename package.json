@@ -1,7 +1,7 @@
 {
-  "name": "my-module",
+  "name": "alchemi-flash",
   "version": "1.0.0",
-  "description": "My new Nuxt module",
+  "description": "Alchemi Flash",
   "license": "MIT",
   "type": "module",
   "exports": {

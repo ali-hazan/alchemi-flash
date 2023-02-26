@@ -5,8 +5,8 @@ export interface ModuleOptions {}
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'my-module',
-    configKey: 'myModule'
+    name: 'alchemi-flash',
+    configKey: 'alchemiFlash'
   },
   // Default configuration options of the Nuxt module
   defaults: {},

@@ -2,19 +2,17 @@
 Get your module up and running quickly.
 
 Find and replace all on all files (CMD+SHIFT+F):
-- Name: My Module
-- Package name: my-module
-- Description: My new Nuxt module
+- Name: Alchemi Flash
+- Package name: alchemi-flash
+- Description: Alchemi flash is a ui library kit which using tailwind
 -->
 
-# My Module
+# Alchemi Flash
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
-
-My new Nuxt module for doing amazing things.
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 <!-- - [📖 &nbsp;Documentation](https://example.com) -->
@@ -22,36 +20,36 @@ My new Nuxt module for doing amazing things.
 ## Features
 
 <!-- Highlight some of the features your module provide here -->
-- ⛰ &nbsp;Foo
-- 🚠 &nbsp;Bar
-- 🌲 &nbsp;Baz
+- Button
+- Typography
+- Card
 
 ## Quick Setup
 
-1. Add `my-module` dependency to your project
+1. Add `alcehmi-flash` dependency to your project
 
 ```bash
 # Using pnpm
-pnpm add -D my-module
+pnpm add -D alcehmi-flash
 
 # Using yarn
-yarn add --dev my-module
+yarn add --dev alchemi-flash
 
 # Using npm
-npm install --save-dev my-module
+npm install --save-dev alchemi-flash
 ```
 
-2. Add `my-module` to the `modules` section of `nuxt.config.ts`
+2. Add `alchemi-flash` to the `modules` section of `nuxt.config.ts`
 
 ```js
 export default defineNuxtConfig({
   modules: [
-    'my-module'
+    'alchemi-flash'
   ]
 })
 ```
 
-That's it! You can now use My Module in your Nuxt app ✨
+That's it! You can now use Alchemi flash in your Nuxt app ✨
 
 ## Development
 
@@ -91,4 +89,4 @@ npm run release
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
-# alchemi-flash
+
