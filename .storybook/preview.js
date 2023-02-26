@@ -1,3 +1,5 @@
+import '../src/runtime/assets/css/tailwind.css'
+
 /** @type { import('@storybook/vue3').Preview } */
 const preview = {
   parameters: {
