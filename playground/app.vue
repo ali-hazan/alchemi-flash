@@ -1,8 +1,9 @@
 <template>
   <div>
-    Nuxt module playground!
+    <FlashButton />
   </div>
 </template>
 
 <script setup>
+
 </script>
