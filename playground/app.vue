@@ -1,6 +1,6 @@
 <template>
   <div>
-    <FlashButton />
+    <FlashButton label="hello world"/>
   </div>
 </template>
 
