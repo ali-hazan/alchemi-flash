@@ -26,14 +26,8 @@ export default defineNuxtModule<ModuleOptions>({
        * to the current path, ie the playground !
        * (or the app using your module)
        */
+      cssPath: options.css ? resolver.resolve("./runtime/assets/css/tailwind.css") : false,
       configPath: resolver.resolve('../tailwind.config'),
     })
-
-    if (options.css) {
-      nuxt.options.css.push(resolver.resolve("./runtime/assets/css/tailwind.css"))
-    }
-
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve('./runtime/plugin'))
   }
 })
