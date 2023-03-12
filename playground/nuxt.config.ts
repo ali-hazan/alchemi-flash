@@ -1,4 +1,6 @@
 export default defineNuxtConfig({
   modules: ['../src/module'],
-  alchemiFlash: {}
+  alchemiFlash: {
+    css:true
+  }
 })
