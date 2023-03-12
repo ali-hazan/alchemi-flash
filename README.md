@@ -5,7 +5,8 @@ Find and replace all on all files (CMD+SHIFT+F):
 - Name: Alchemi Flash
 - Package name: alchemi-flash
 - Description: Alchemi flash is a ui library kit which using tailwind
--->
+- [Blog](https://medium.com/vuejs-school/make-your-own-tailwind-ui-component-library-for-your-nuxt-project-using-storybook-part-1-4-b3d11ad48867)
+-- [Storybook](https://sweet-gecko-ed7a89.netlify.app/?path=/docs/introduction--docs)
 
 # Alchemi Flash
 
