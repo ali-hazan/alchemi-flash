@@ -4,19 +4,12 @@ export default {
   title: 'Card',
   component: FlashCard,
   tags: ['autodocs'],
-  argTypes: {
-    default: {
-      control: {
-        type: 'text',
-      },
-    }
-  },
   render: (args: any) => ({
     components: { FlashCard },
     setup() {
       return { args };
     },
-    template: `<FlashCard v-bind="args">${args.default}</FlashCard>`,
+    template: `<FlashCard v-bind="args"/>`,
   }),
 };
 

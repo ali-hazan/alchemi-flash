@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, PropType, toRefs } from 'vue';
+import { computed, defineComponent, toRefs } from 'vue';
 
 export default defineComponent({
     props: {

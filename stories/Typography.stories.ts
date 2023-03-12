@@ -16,7 +16,7 @@ export default {
     setup() {
       return { args };
     },
-    template: `<FlashTypography v-bind="args">${args.default}</FlashTypography>`,
+    template: `<FlashTypography v-bind="args">{{args.default}}</FlashTypography>`,
   }),
 };
 
