@@ -2,16 +2,17 @@
     <div class="max-w-sm rounded overflow-hidden shadow-lg">
         <img class="w-full" :src="img" :alt="imgAlt">
         <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">{{ title }}</div>
-            <p class="text-gray-700 text-base">
+            <FlashTypography type="h2" level="lg" weight="semi-strong">{{ title }}</FlashTypography>
+            <FlashTypography type="p" level="sm">
                 {{ description }}
-            </p>
+            </FlashTypography>
         </div>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import FlashTypography from './FlashTypography.vue';
 
 export default defineComponent({
     props: {
@@ -20,7 +21,7 @@ export default defineComponent({
         },
         imgAlt: {
             type: String,
-            default: 'Image'
+            default: "Image"
         },
         title: {
             type: String,
@@ -28,6 +29,7 @@ export default defineComponent({
         description: {
             type: String,
         }
-    }
+    },
+    components: { FlashTypography }
 })
 </script>
