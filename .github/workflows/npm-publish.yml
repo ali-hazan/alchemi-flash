@@ -38,9 +38,27 @@ jobs:
           git config --local user.name "Ali Hassan"
           VERSION=$(echo ${{ github.event.release.tag_name }} | sed 's/v//')
           sed -i "s/\"version\": \".*\"/\"version\": \"$VERSION\"/g" package.json
+          if [ "$(git status --porcelain)" = "" ]; then
+            echo "No changes to commit"
+            exit 0
+          fi
           git add .
           git commit -m "Bump version to $VERSION"
-
+      
+      - name: CHANGELOG.md
+        uses: mikepenz/release-changelog-builder-action@v3
+        with:
+          outputFile: CHANGELOG_NEW.md
+      
+      - name: Merge changelog
+        run: cat CHANGELOG_NEW.md >> CHANGELOG.md
+      
+      - name: Adding commit
+        run: |
+          VERSION=$(echo ${{ github.event.release.tag_name }} | sed 's/v//')
+          git add CHANGELOG.md
+          git commit -m "Update CHANGELOG.md according to $VERSION"
+  
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
@@ -52,4 +70,3 @@ jobs:
         run: yarn publish 
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-
