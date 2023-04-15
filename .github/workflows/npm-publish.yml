@@ -15,8 +15,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm ci
-      - run: npm test
+      - run: yarn install --frozen-lockfile
+      - run: yarn dev:prepare
+      - run: yarn test
 
   publish-npm:
     needs: build
@@ -27,7 +28,28 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm publish
+      - run: yarn install --frozen-lockfile
+      - run: yarn dev:build
+      
+      # Update the version in package.json
+      - name: Update Version
+        run: |
+          git config --local user.email "alihassankp27@gmail.com"
+          git config --local user.name "Ali Hassan"
+          VERSION=$(echo ${{ github.event.release.tag_name }} | sed 's/v//')
+          sed -i "s/\"version\": \".*\"/\"version\": \"$VERSION\"/g" package.json
+          git add .
+          git commit -m "Bump version to $VERSION"
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: ${{ github.head_ref }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+
+      - name: Publishing the package
+        run: yarn publish 
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+
