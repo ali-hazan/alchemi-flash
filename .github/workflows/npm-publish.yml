@@ -56,6 +56,10 @@ jobs:
       - name: Adding commit
         run: |
           VERSION=$(echo ${{ github.event.release.tag_name }} | sed 's/v//')
+          if [ "$(git status --porcelain)" = "" ]; then
+            echo "No changes to commit"
+            exit 0
+          fi
           git add CHANGELOG.md
           git commit -m "Update CHANGELOG.md according to $VERSION"
   
